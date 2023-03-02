@@ -30,5 +30,6 @@ func _on_Button3_pressed():
 		elif(cont!=0):
 			$Button3/Label2.text = str(nome) + " baldo"
 		i+=1
+		
 
 
