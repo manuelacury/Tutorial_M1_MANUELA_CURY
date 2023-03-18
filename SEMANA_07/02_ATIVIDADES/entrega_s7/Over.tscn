@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 95.0
+margin_top = 103.0
+margin_right = 938.0
+margin_bottom = 486.0
+text = "Parabéns, você coletou os itens perdidos"

@@ -1,0 +1,170 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://download.png" type="Texture" id=2]
+[ext_resource path="res://download.jpg" type="Texture" id=3]
+[ext_resource path="res://90825.png" type="Texture" id=4]
+[ext_resource path="res://1967431.png" type="Texture" id=5]
+[ext_resource path="res://191.png" type="Texture" id=6]
+[ext_resource path="res://1077974.png" type="Texture" id=7]
+[ext_resource path="res://celular2.png" type="Texture" id=8]
+[ext_resource path="res://garrafa2.png" type="Texture" id=9]
+[ext_resource path="res://mochila2.png" type="Texture" id=10]
+[ext_resource path="res://carteira2.png" type="Texture" id=11]
+[ext_resource path="res://coletarGarrafa1.gd" type="Script" id=12]
+[ext_resource path="res://coletarCarteira.gd" type="Script" id=13]
+[ext_resource path="res://coletarMochila.gd" type="Script" id=14]
+[ext_resource path="res://coletarGarrafa2.gd" type="Script" id=15]
+[ext_resource path="res://coletarCelular2.gd" type="Script" id=16]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.5, 23 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 25.5, 22 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 175.158, 259.766 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 113.778, 246.857 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 146.286, 258.942 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 1, -1 )
+
+[node name="fundo  marrom" type="Sprite" parent="."]
+position = Vector2( 492, 315 )
+scale = Vector2( 3.90273, 3.42486 )
+texture = ExtResource( 3 )
+
+[node name="coletarGarrafa1" type="Area2D" parent="."]
+position = Vector2( 639.827, 405.187 )
+scale = Vector2( 0.105469, 0.109375 )
+script = ExtResource( 12 )
+
+[node name="garrafa1" type="Sprite" parent="coletarGarrafa1"]
+position = Vector2( -5401.07, -1703.99 )
+scale = Vector2( 1.09259, 0.910715 )
+texture = ExtResource( 5 )
+offset = Vector2( 1755.71, -806.281 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coletarGarrafa1"]
+position = Vector2( -3487.54, -2433.71 )
+scale = Vector2( 9.48146, 9.14286 )
+shape = SubResource( 2 )
+
+[node name="celular" type="Sprite" parent="."]
+position = Vector2( 514, 219 )
+scale = Vector2( 0.0866368, 0.0937882 )
+texture = ExtResource( 6 )
+
+[node name="Carteira2" type="Sprite" parent="."]
+position = Vector2( 755, 462 )
+scale = Vector2( 0.0898438, 0.0898438 )
+texture = ExtResource( 11 )
+
+[node name="Garrafa2" type="Sprite" parent="."]
+position = Vector2( 290, 563 )
+scale = Vector2( 0.0976562, 0.0976562 )
+texture = ExtResource( 9 )
+
+[node name="Mochila2" type="Sprite" parent="."]
+position = Vector2( 94, 58 )
+scale = Vector2( 0.152344, 0.152344 )
+texture = ExtResource( 10 )
+
+[node name="Garrafa3" type="Sprite" parent="."]
+position = Vector2( 61, 370 )
+scale = Vector2( 0.0898438, 0.0898438 )
+texture = ExtResource( 9 )
+
+[node name="coletarCarteira" type="Area2D" parent="."]
+position = Vector2( 639.827, 405.187 )
+scale = Vector2( 0.105469, 0.109375 )
+script = ExtResource( 13 )
+
+[node name="carteira1" type="Sprite" parent="coletarCarteira"]
+position = Vector2( 760.157, -2040.57 )
+scale = Vector2( 0.925924, 0.785716 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coletarCarteira"]
+position = Vector2( 755.416, -2040.57 )
+scale = Vector2( 9.48146, 9.14286 )
+shape = SubResource( 3 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( -60, 54 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Download" type="Sprite" parent="Player"]
+position = Vector2( 188, 245.5 )
+scale = Vector2( 0.893333, 1.08929 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+polygon = PoolVector2Array( 151, 266, 161, 244, 168, 235, 179, 204, 188, 198, 199, 207, 207, 230, 227, 265, 218, 265, 211, 284, 218, 291, 153, 292, 164, 287, 156, 268 )
+
+[node name="coletarMochila" type="Area2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coletarMochila"]
+position = Vector2( 547, 469.5 )
+scale = Vector2( 0.148437, 0.132812 )
+shape = SubResource( 5 )
+
+[node name="mochila1" type="Sprite" parent="coletarMochila"]
+position = Vector2( 547, 469 )
+scale = Vector2( 0.148437, 0.132812 )
+texture = ExtResource( 4 )
+
+[node name="coletarGarrafa2" type="Area2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="garrafa2" type="Sprite" parent="coletarGarrafa2"]
+position = Vector2( 639.827, 405.187 )
+scale = Vector2( 0.105469, 0.109375 )
+texture = ExtResource( 5 )
+offset = Vector2( 1755.71, -806.281 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coletarGarrafa2"]
+position = Vector2( 825, 317 )
+scale = Vector2( 0.105469, 0.109375 )
+shape = SubResource( 4 )
+
+[node name="coletarCelular2" type="Area2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="celular2" type="Sprite" parent="coletarCelular2"]
+position = Vector2( 142, 504.25 )
+scale = Vector2( 0.109375, 0.084961 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coletarCelular2"]
+position = Vector2( 142, 504 )
+scale = Vector2( 0.109375, 0.084961 )
+shape = SubResource( 6 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 794.0
+margin_top = 19.0
+margin_right = 1004.0
+margin_bottom = 118.0
+text = "clique apenas quando terminar"
+
+[connection signal="body_entered" from="coletarGarrafa1" to="Player" method="_on_coletarGarrafa1_body_entered"]
+[connection signal="body_entered" from="coletarGarrafa1" to="coletarGarrafa1" method="_on_coletarGarrafa1_body_entered"]
+[connection signal="body_entered" from="coletarCarteira" to="Player" method="_on_coletarCarteira_body_entered"]
+[connection signal="body_entered" from="coletarCarteira" to="coletarCarteira" method="_on_coletarCarteira_body_entered"]
+[connection signal="body_entered" from="coletarMochila" to="Player" method="_on_coletarMochila_body_entered"]
+[connection signal="body_entered" from="coletarMochila" to="coletarGarrafa1" method="_on_coletarMochila_body_entered"]
+[connection signal="body_entered" from="coletarMochila" to="coletarMochila" method="_on_coletarMochila_body_entered"]
+[connection signal="body_entered" from="coletarGarrafa2" to="coletarGarrafa2" method="_on_coletarGarrafa2_body_entered"]
+[connection signal="body_entered" from="coletarCelular2" to="coletarCelular2" method="_on_coletarCelular2_body_entered"]
+[connection signal="pressed" from="Button" to="coletarGarrafa1" method="_on_Button_pressed"]
